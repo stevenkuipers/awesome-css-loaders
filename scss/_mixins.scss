@@ -1,10 +1,10 @@
 
 @mixin base_style {
-  position: relative;
+  // position: relative;
   width: $acl-size;
   height: $acl-size;
   background-color: $acl-color;
-  margin: $acl-margin;
+  margin: $acl-margin auto;
 }
 
 @mixin pseudo_base_style {

@@ -1,0 +1,79 @@
+
+@import "../variables";
+@import "../mixins";
+
+.acl-slide-and-tumble-square {
+  @include base_style;
+  animation: move-left-right 3s cubic-bezier(0.18, 0.89, 0.64, 1.08) infinite;
+
+  &::before {
+    @include pseudo_base_style;
+    background-color: lighten($acl-color, 10%);
+    left: -$acl-margin;
+    transform-origin: right;
+    animation: scale-side 1.5s cubic-bezier(0.18, 0.89, 0.64, 1.08) infinite;
+  }
+}
+
+@keyframes move-left-right {
+  0% {
+    transform: translate(-$acl-size * 3, 0);
+  }
+
+  30% {
+    transform: translate($acl-size * 3, 0);
+  }
+
+  40% {
+    transform-origin: bottom right;
+    transform: translate($acl-size * 3, 0 ) rotate(90deg);
+  }
+
+  45% {
+    transform-origin: bottom right;
+    transform: translate($acl-size * 3, 0 ) rotate(180deg);
+  }
+
+  50% {
+    transform-origin: bottom right;
+    transform: translate($acl-size * 3, 0 ) rotate(180deg);
+  }
+
+  70% {
+    transform: translate(-$acl-size * 3, 0) rotate(180deg);
+  }
+
+  80% {
+     transform: translate(-$acl-size * 3, 0) rotate(180deg);
+  }
+
+  90% {
+    transform-origin: bottom right;
+    transform: translate(-$acl-size * 3, 0 ) rotate(270deg);
+  }
+
+  95% {
+    transform-origin: bottom right;
+    transform: translate(-$acl-size * 3, 0 ) rotate(360deg);
+  }
+
+  100%{
+    transform: translate(-$acl-size * 3, 0);
+  }
+}
+
+
+@keyframes scale-side {
+  0% {
+    transform: scaleX(0);
+  }
+  25% {
+    transform: scaleX(4);
+  }
+  30% {
+    transform: scaleX(4);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
