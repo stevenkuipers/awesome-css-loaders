@@ -1,0 +1,100 @@
+@import "../variables";
+@import "../mixins";
+
+.acl-bouncing-squares {
+  @include base_style;
+  background-color: transparent;
+  position: relative;
+
+  &::before, &::after {
+    @include pseudo_base_style;
+    background-color: $acl-color;
+    border-radius: $acl-border-radius;
+  }
+
+  &::before {
+    left: 25%;
+    animation: bounce-left 1.5s cubic-bezier(1,-0.05, 0, 0.99) infinite;
+  }
+
+  &::after {
+    right: 25%;
+    animation: bounce-right 1.5s cubic-bezier(1,-0.05, 0, 0.99) infinite;
+  }
+}
+
+@keyframes bounce-left{
+  0%{
+    transform: scale(.3) translate(-$acl-size , 0);
+  }
+
+  15% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  25% {
+    transform: scale(.5) translate($acl-size , 0);
+  }
+
+  35% {
+    transform: scale(.5) translate($acl-size , 0);
+  }
+
+  50% {
+    transform: scale(.5) translate($acl-size , 0);
+  }
+
+  65% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  75% {
+    transform: scale(.3) translate($acl-size , 0);
+  }
+
+  85% {
+    transform: scale(.3) translate($acl-size , 0);
+  }
+
+  100% {
+    transform: scale(.3) translate($acl-size , 0);
+  }
+}
+
+@keyframes bounce-right{
+  0%{
+    transform: scale(.5) translate(-$acl-size , 0);
+  }
+
+  15% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  25% {
+    transform: scale(.3) translate(-$acl-size , 0);
+  }
+
+  35% {
+    transform: scale(.3) translate(-$acl-size , 0);
+  }
+
+  50% {
+    transform: scale(.3) translate(-$acl-size , 0);
+  }
+
+  65% {
+    transform: scale(1) translate(0, 0);
+  }
+
+  75% {
+    transform: scale(.5) translate(-$acl-size , 0);
+  }
+
+  85% {
+    transform: scale(.5) translate(-$acl-size , 0);
+  }
+
+  100% {
+    transform: scale(.5) translate(-$acl-size , 0);
+  }
+}
