@@ -1,0 +1,31 @@
+{
+  "name": "awesome-css-loaders",
+  "version": "1.0.0",
+  "description": "A collection of awesome css loaders",
+  "main": "index.js",
+  "scripts": {
+    "watch-sass": "node-sass scss/awesome-css-loaders.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenkuipers/awesome-css-loaders.git"
+  },
+  "keywords": [
+    "CSS",
+    "loaders",
+    "spinners"
+  ],
+  "author": "Steven Kuipers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenkuipers/awesome-css-loaders/issues"
+  },
+  "homepage": "https://github.com/stevenkuipers/awesome-css-loaders#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.5.0",
+    "postcss-cli": "^6.1.2"
+  }
+}
