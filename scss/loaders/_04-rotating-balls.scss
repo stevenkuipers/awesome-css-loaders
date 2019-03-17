@@ -1,0 +1,42 @@
+@import "../variables";
+@import "../mixins";
+
+.acl-rotating-balls {
+  @include base_style;
+  position: relative;
+  border-radius: 50%;
+  animation: rotate-balls 1.2s linear infinite;
+
+  &::before, &::after {
+    @include pseudo_base_style;
+    background-color: $acl-color;
+    border-radius: 50%;
+  }
+
+  &::before {
+    left: -$acl-margin * 1.5;
+    animation: bounce-balls .6s linear infinite alternate;
+    animation-delay: .3s;
+  }
+
+  &::after {
+    right: -$acl-margin * 1.5;
+    animation: bounce-balls .6s linear infinite alternate;
+    animation-delay: -.3s;
+  }
+}
+
+@keyframes rotate-balls {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-balls {
+  0%{
+    transform: scale(.5) translateY(-$acl-size * 1.5);
+  }
+  100% {
+    transform: scale(.5) translateY($acl-size * 1.5);
+  }
+}
