@@ -1,0 +1,78 @@
+
+@import "../variables";
+@import "../mixins";
+
+.acl-caret-cross {
+  @include base_style;
+  transform-style: preserve-3d;
+  transform: translateZ(0) rotateX(45deg) rotateY(0deg) rotateZ(45deg);
+
+  &::before, &::after {
+    @include pseudo_base_style;
+    background-color: $acl-color;
+    opacity: 1;
+  }
+
+  &::before {
+    animation: caret-cross 4s linear infinite;
+    animation-delay: -1s;
+  }
+
+  &::after {
+    animation: caret-cross 4s linear infinite;
+  }
+}
+
+@keyframes caret-cross{
+ 0% {
+   transform: translateX($acl-size) translateY(0);
+ }
+
+ 23% {
+   transform: translateX($acl-size) translateY(0);
+ }
+
+ 24% {
+   transform: translateX(0) translateY(-$acl-size);
+ }
+
+ 25%{
+   transform: translateX(0) translateY(-$acl-size);
+ }
+
+ 48%{
+   transform: translateX(0) translateY(-$acl-size);
+ }
+
+ 49%{
+   transform: translateX(0) translateY($acl-size);
+ }
+
+ 50%{
+   transform: translateX(0) translateY($acl-size);
+ }
+
+ 73% {
+  transform: translateX(0) translateY($acl-size);
+ }
+
+ 74% {
+   transform: translateX(-$acl-size) translateY(0);
+ }
+
+ 75% {
+   transform: translateX(-$acl-size) translateY(0);
+
+ }
+ 98% {
+   transform: translateX(-$acl-size) translateY(0);
+
+ }
+ 99% {
+   transform: translateX($acl-size) translateY(0);
+ }
+ 
+ 100% {
+   transform: translateX($acl-size) translateY(0);
+ }
+}
