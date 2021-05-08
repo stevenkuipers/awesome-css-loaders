@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/stevenkuipers/awesome-css-loaders#readme",
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.13.1"
   },
   "dependencies": {
     "autoprefixer": "^9.5.0",
